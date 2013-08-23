@@ -17,15 +17,31 @@ public class Client {
 
 interface RangeCreep {}
 
-class RadiantRangeCreep implements RangeCreep {}
+class RadiantRangeCreep implements RangeCreep {
+	public RadiantRangeCreep() {
+		System.out.println("radiant range creep has benn spawned");
+	}
+}
 
-class DireRangeCreep implements RangeCreep {}
+class DireRangeCreep implements RangeCreep {
+	public DireRangeCreep() {
+		System.out.println("dire range creep has benn spawned");
+	}
+}
 
 interface MeleeCreep {}
 
-class RadiantMeleeCreep implements MeleeCreep {}
+class RadiantMeleeCreep implements MeleeCreep {
+	public RadiantMeleeCreep() {
+		System.out.println("radiant melee creep has benn spawned");
+	}
+}
 
-class DireMeleeCreep implements MeleeCreep {}
+class DireMeleeCreep implements MeleeCreep {
+	public DireMeleeCreep() {
+		System.out.println("dire melee creep has benn spawned");
+	}
+}
 
 interface CreepFactory {
 	public MeleeCreep spawnMelee();
@@ -34,22 +50,18 @@ interface CreepFactory {
 
 class RadiantCreepFactory implements CreepFactory {
 	public MeleeCreep spawnMelee() {
-		System.out.println("radiant melee creep has benn spawned");
 		return new RadiantMeleeCreep();
 	}
 	public RangeCreep spawnRange() {
-		System.out.println("radiant range creep has benn spawned");
 		return new RadiantRangeCreep();
 	}
 }
 
 class DireCreepFactory implements CreepFactory {
 	public MeleeCreep spawnMelee() {
-		System.out.println("dire melee creep has benn spawned");
 		return new DireMeleeCreep();
 	}
 	public RangeCreep spawnRange() {
-		System.out.println("dire range creep has benn spawned");
 		return new DireRangeCreep();
 	}
 }
